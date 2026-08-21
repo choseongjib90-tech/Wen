@@ -31,7 +31,7 @@ jobs:
         run: pnpm build:pages
         env:
           GITHUB_PAGES: 'true'
-          NEXT_PUBLIC_BASE_PATH: /Wen
+          NEXT_PUBLIC_BASE_PATH: ''
       - run: touch out/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
