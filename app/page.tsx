@@ -17,7 +17,7 @@ export default function Home() {
     <header className="site-header">
       <a className="logo" href="#top" aria-label="GK클린 홈으로"><span className="logo-mark">GK</span><strong>주식회사 지케이클린</strong></a>
       <nav aria-label="주요 메뉴">{['홈','GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?'#top':'#'+x.replaceAll(' ','')}>{x}</a>)}</nav>
-      <a className="nav-cta" href="#contact">견적 문의</a><a className="phone" href="tel:16661778">☎ <strong>1666-1778</strong></a>
+      <a className="nav-cta" href="/contact">견적 문의</a><a className="phone" href="tel:16661778">☎ <strong>1666-1778</strong></a>
     </header>
 
     <section id="top" className="hero"><div className="hero-shade"/><div className="hero-content"><p>TOWEL LAUNDRY</p><h1>미용실 수건 세탁</h1><span>샴푸 후 손님 목에 가장 먼저 닿는 수건입니다. 염색약·중화제·펌제를 빼내는 전용 공정으로 세탁합니다.</span></div></section>
@@ -39,9 +39,9 @@ export default function Home() {
 
     <section id="업종별수건세탁" className="related wrap"><p>이런 세탁도 함께 하고 있습니다</p><div>{['헬스장 수건 세탁','필라테스 수건 세탁','요양원 수건 세탁','병원 수건 세탁','피부과 수건 세탁','에스테틱 수건 세탁'].map(x=><a href="#" key={x}>{x}<span>→</span></a>)}</div><a className="all-link" href="#">업종별 수건세탁 전체 보기</a></section>
 
-    <section id="contact" className="cta"><div className="hero-shade"/><div><h2>미용실 수건 세탁, 한 번 맡겨보세요</h2><p>매장에 방문해 세탁물을 직접 보고 견적을 드립니다. 샘플링도 함께 도와드립니다.</p><a className="blue-btn" href="tel:16661778">☎　1666-1778</a><a className="ghost-btn" href="mailto:hello@example.com">견적 문의하기</a></div></section>
+    <section id="contact" className="cta"><div className="hero-shade"/><div><h2>미용실 수건 세탁, 한 번 맡겨보세요</h2><p>매장에 방문해 세탁물을 직접 보고 견적을 드립니다. 샘플링도 함께 도와드립니다.</p><a className="blue-btn" href="tel:16661778">☎　1666-1778</a><a className="ghost-btn" href="/contact">견적 문의하기</a></div></section>
 
-    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><span className="logo-mark">GK</span><strong>GK클린</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 병원 · 피부과 · 에스테틱 · 요양원 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 다른 사업장 세탁물과 섞지 않는 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p><a href="#">BLOG</a></div><div><small>바로가기</small>{['GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href="#" key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>1666-1778</h3><a className="footer-btn" href="#contact">견적 문의하기</a><p>대표자: 조성준</p><p>경기도 시흥시 미산로 94-1 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 주식회사 지케이클린　|　대표자: 조성준　|　사업자등록번호: 374-86-02602</span><span>ⓒ GK클린. All rights reserved.</span></div></footer>
+    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><span className="logo-mark">GK</span><strong>GK클린</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 병원 · 피부과 · 에스테틱 · 요양원 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 다른 사업장 세탁물과 섞지 않는 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p><a href="#">BLOG</a></div><div><small>바로가기</small>{['GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href={x==='견적 문의'?'/contact':'#'} key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>1666-1778</h3><a className="footer-btn" href="/contact">견적 문의하기</a><p>대표자: 조성준</p><p>경기도 시흥시 미산로 94-1 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 주식회사 지케이클린　|　대표자: 조성준　|　사업자등록번호: 374-86-02602</span><span>ⓒ GK클린. All rights reserved.</span></div></footer>
 
     <div className="floating"><a href="#" aria-label="블로그">N</a><a href="tel:16661778">☎　1666-1778</a></div>
   </main>
