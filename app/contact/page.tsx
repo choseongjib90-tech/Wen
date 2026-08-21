@@ -2,6 +2,7 @@
 import {FormEvent, useState} from 'react';
 
 const items=['수건 · 타월','가운 · 유니폼','운동복 · 헬스복','환자복 · 의료복','이불 · 시트 · 침구류','단체복 · 행사 세탁','기타 · 상담 후 결정'];
+const BASE=process.env.NEXT_PUBLIC_BASE_PATH??'';
 
 export default function Contact(){
   const [selected,setSelected]=useState<string[]>([]);
@@ -10,14 +11,14 @@ export default function Contact(){
     e.preventDefault(); const form=e.currentTarget; const fd=new FormData(form);
     setStatus('sending');
     try{
-      const response=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_honey:fd.get('website'),성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택',문의내용:fd.get('message')||'없음'})});
+      const response=await fetch('https://formsubmit.co/ajax/whtod13@naver.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'[GK클린] 새로운 세탁 견적 문의',_template:'table',_honey:fd.get('website'),성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택',문의내용:fd.get('message')||'없음'})});
       if(!response.ok) throw new Error('send failed');
       setStatus('success'); setSelected([]);
       try{form.reset()}catch{}
     }catch{setStatus('error')}
   }
   return <main>
-    <header className="site-header"><a className="logo" href="/"><span className="logo-mark">GK</span><strong>주식회사 지케이클린</strong></a><nav>{['홈','GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?'/':x==='견적 문의'?'/contact':'/#'}>{x}</a>)}</nav><a className="nav-cta" href="/contact">견적 문의</a><a className="phone" href="tel:16661778">☎ <strong>1666-1778</strong></a></header>
+    <header className="site-header"><a className="logo" href={`${BASE}/`}><span className="logo-mark">GK</span><strong>주식회사 지케이클린</strong></a><nav>{['홈','GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?`${BASE}/`:x==='견적 문의'?`${BASE}/contact/`:`${BASE}/#`}>{x}</a>)}</nav><a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:16661778">☎ <strong>1666-1778</strong></a></header>
     <section className="contact-hero"><p>CONTACT</p><h1>세탁 견적 문의</h1><span>업종과 지역, 하루 발생량을 알려주시면 담당자가 확인 후 연락드립니다.<br/>매장 방문 상담과 샘플링도 함께 도와드립니다.</span></section>
     <section className="contact-area wrap"><form className="contact-form" onSubmit={submit}><p className="form-kicker">INQUIRY</p><h2>세탁 견적 문의</h2><small>* 표시는 필수 입력 항목입니다</small><input className="website-field" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"/>
       <label>성함 *<input name="name" required placeholder="예: 홍길동"/></label><label>연락처 *<input name="phone" required placeholder="010-1234-5678"/></label><label>매장 지역 *<input name="area" required placeholder="예: 부천 중동 / 서울 강남구"/></label>
