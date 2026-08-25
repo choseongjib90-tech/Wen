@@ -17,7 +17,7 @@ export default function Home() {
   return <main>
     <header className="site-header">
       <a className="logo" href="#top" aria-label="조세탁연구소 홈으로"><strong>조세탁연구소</strong></a>
-      <nav aria-label="주요 메뉴">{['홈','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?'#top':'#'+x.replaceAll(' ','')}>{x}</a>)}</nav>
+      <nav aria-label="주요 메뉴">{['홈','업종별 수건세탁','세탁 공정','가격 안내','세탁 사례'].map(x=><a key={x} href={x==='홈'?'#top':'#'+x.replaceAll(' ','')}>{x}</a>)}</nav>
       <a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a>
     </header>
 
