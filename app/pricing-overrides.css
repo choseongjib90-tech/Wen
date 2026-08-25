@@ -1,0 +1,63 @@
+.pricing{
+  background:#f7f9fc;
+}
+.pricing-grid{
+  gap:22px;
+}
+.price-card{
+  background:#fff;
+  border:1px solid #e2e7ef;
+  color:#171717;
+  box-shadow:0 10px 30px rgba(17,17,17,.04);
+}
+.price-card.featured{
+  border:2px solid var(--blue);
+  box-shadow:0 0 0 4px rgba(54,121,245,.10),0 14px 34px rgba(54,121,245,.10);
+}
+.popular{
+  background:var(--blue);
+  color:#fff;
+}
+.price-card h3{
+  color:#171717;
+}
+.price-target{
+  color:#667085;
+}
+.price-value{
+  color:var(--blue);
+}
+.price-note{
+  color:#7a8491;
+}
+.price-card hr{
+  border-top-color:#e8ebf0;
+}
+.price-card ul{
+  color:#303846;
+}
+.price-card li:before{
+  color:var(--blue);
+}
+.price-button{
+  border-color:#cfd8e5;
+  color:#1f2937;
+  background:#fff;
+}
+.price-button:hover{
+  border-color:var(--blue);
+  color:var(--blue);
+}
+.price-button.solid{
+  background:var(--blue);
+  border-color:var(--blue);
+  color:#fff;
+}
+.pricing-info{
+  border-color:#bfd2fb;
+  background:#f1f5ff;
+  color:#566174;
+}
+.pricing-info b{
+  color:#171717;
+}
