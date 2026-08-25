@@ -7,11 +7,6 @@ const BASE=process.env.NEXT_PUBLIC_BASE_PATH??'';
 const cases = [
   [`${BASE}/assets/thumb1.webp`,'영등포구 · 미용실','영등포구 미용실 수건세탁'],[`${BASE}/assets/thumb2.webp`,'성남 분당 판교 · 미용실','분당 판교 헤어샵 전용 세탁'],[`${BASE}/assets/thumb3.webp`,'부천 · 미용실','매일 쌓이는 수건 정기 수거'],[`${BASE}/assets/thumb4.webp`,'인천 부평 · 미용실','축축하고 뻣뻣한 수건 케어'],[`${BASE}/assets/thumb5.webp`,'마포구 · 미용실','서울 마포구 수건 전문 세탁'],[`${BASE}/assets/thumb6.webp`,'광명 · 미용실','광명 미용실 수건세탁']
 ];
-const faqs = [
-  ['이미 누렇게 변한 수건도 살릴 수 있나요?','잔류 세제와 유분이 쌓여 누렇게 보이는 경우는 전처리로 상당 부분 돌아옵니다. 다만 염색약이 오래 고정된 자국은 완전히 지워지지 않을 수 있어, 수거 전에 실물을 보고 솔직하게 말씀드립니다.'],
-  ['다른 미용실 수건과 섞이지 않나요?','섞지 않습니다. 업체별로 단독 세탁하고 단독으로 분류합니다. 같은 브랜드라도 매장이 다르면 따로 돌립니다.'],
-  ['수건 말고 가운도 맡길 수 있나요?','고객용 가운, 대형 타월, 스태프 유니폼까지 함께 취급합니다. 품목에 따라 추가 금액이 발생하며 소재에 맞춰 따로 세탁합니다.']
-];
 
 export default function Home() {
   return <main>
@@ -27,16 +22,23 @@ export default function Home() {
 
     <section id="세탁공정" className="points">
       <div className="point-row wrap"><img src={`${BASE}/assets/point1.webp`} alt="산업용 세탁기 안의 미용실 세탁물"/><div className="point-copy"><b>POINT 01</b><h2>미용 세탁물은 유화 공정을 거쳐야 빠집니다</h2><p>펌제·중화제·염색약은 유분과 함께 섬유에 달라붙습니다. 기름때를 물에 풀어내는 유화 공정을 거치지 않으면 표면만 씻기고 안쪽에 남습니다. 오일 성분이 남은 채 건조기 열을 받으면 발화 위험까지 생깁니다.</p></div></div>
-      <div className="point-row reverse wrap"><img src={`${BASE}/assets/point2.webp`} alt="세탁 완료 후 검수 전 수건"/><div className="point-copy"><b>POINT 02</b><h2>염색약 자국은 기계가 못 잡습니다</h2><p>GK클린은 건조를 마친 수건을 한 장씩 펼쳐 자국과 이물질을 눈으로 확인한 뒤에야 접습니다. 자동 검수만으로는 미용실이 가장 예민해하는 이 부분을 걸러내지 못합니다.</p></div></div>
+      <div className="point-row reverse wrap"><img src={`${BASE}/assets/point2.webp`} alt="세탁 완료 후 검수 전 수건"/><div className="point-copy"><b>POINT 02</b><h2>염색약 자국은 기계가 못 잡습니다</h2><p>조세탁연구소는 건조를 마친 수건을 한 장씩 펼쳐 자국과 이물질을 눈으로 확인한 뒤에야 접습니다. 자동 검수만으로는 미용실이 가장 예민해하는 이 부분을 걸러내지 못합니다.</p></div></div>
     </section>
 
-    <section className="method"><div className="wrap"><h2>그래서 GK클린은 이렇게 합니다</h2><div className="check-grid">
+    <section className="method"><div className="wrap"><h2>그래서 조세탁연구소는 이렇게 합니다</h2><div className="check-grid">
       {['미용 세탁물 전용 유화 공정 — 약품과 유분기를 먼저 풀어냅니다','고온스팀 살균 세탁으로 냄새 유발균 차단','건조 후 한 장씩 펼쳐 염색약 자국·이물질 육안 검수','고객용 가운 · 대형 타월 · 스태프 유니폼도 함께'].map(x=><div key={x}><i>✓</i><span>{x}</span></div>)}
       </div><p className="eyebrow">함께 맡기실 수 있는 품목</p><div className="chips">{['수건 · 타월','고객용 가운','대형 타월','스태프 유니폼'].map(x=><span key={x}>{x}</span>)}</div></div></section>
 
     <section id="세탁사례" className="records"><div className="wrap"><h2>실제 작업 기록</h2><p>사진을 누르면 그 작업을 적어 둔 공식 블로그 글로 이동합니다.</p></div><div className="case-strip">{cases.map(([src,place,title])=><a className="case-card" href="#" key={src}><img src={src} alt={place+' 작업 사진'}/><div><b>{place}</b><span>{title}</span></div></a>)}</div><a className="outline-btn" href="#">미용실 · 뷰티 세탁 사례 보기　→</a></section>
 
-    <section id="가격안내" className="faq"><div className="narrow"><h2>자주 묻는 질문</h2>{faqs.map(([q,a])=><article key={q}><p><b>Q.</b><strong>{q}</strong></p><p><b>A.</b><span>{a}</span></p></article>)}</div></section>
+    <section id="가격안내" className="pricing"><div className="pricing-wrap">
+      <div className="pricing-grid">
+        <article className="price-card"><h3>정기 수거 · 소형</h3><p className="price-target">미용실 · 에스테틱 · PT샵 등 1인 매장부터</p><strong className="price-value">월 200,000원 ~</strong><p className="price-note">최소 금액이며, 물량과 품목에 따라 조정됩니다.</p><hr/><ul><li>업체별 단독세탁 · 단독건조</li><li>고온 스팀살균 세탁</li><li>1:1 수동 검수</li><li>칼각 폴딩 + 밴딩 포장</li><li>정기 수거 · 배송</li></ul><a className="price-button" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
+        <article className="price-card featured"><span className="popular">가장 많이 선택하십니다</span><h3>정기 수거 · 중형</h3><p className="price-target">헬스장 · 필라테스 · 피부과 · 의원 등 물량이 꾸준한 사업장</p><strong className="price-value">월 400,000원 ~</strong><p className="price-note">최소 금액이며, 물량과 품목에 따라 조정됩니다.</p><hr/><ul><li>소형 구성 전체 포함</li><li>품목별 분리 세탁 (수건 · 가운 · 운동복)</li><li>수거 · 배송 주기 협의</li><li>오염 종류별 맞춤 세제</li></ul><a className="price-button solid" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
+        <article className="price-card"><h3>대량 · 시설 전담</h3><p className="price-target">기업체 · 관공서 · 연수원 등 대량 세탁</p><strong className="price-value">상담 후 안내</strong><hr/><ul><li>중형 구성 전체 포함</li><li>침구류(이불 · 패드 · 베개커버) 포함</li><li>로고 방향까지 맞춘 수작업 폴딩</li><li>새벽 배송 등 시간대 협의</li><li>행사 · 연수 단발성 대량 세탁</li></ul><a className="price-button" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
+      </div>
+      <div className="pricing-info"><b>ⓘ　표시된 금액은 시작 금액입니다.</b><span> 품목과 하루 발생량, 수거·배송 주기, 오염 정도에 따라 금액이 달라집니다. 연락 주시면 매장에 방문해 세탁물을 직접 보고 견적과 샘플링을 함께 도와드립니다.</span></div>
+    </div></section>
 
     <section id="업종별수건세탁" className="related wrap"><p>이런 세탁도 함께 하고 있습니다</p><div>{['헬스장 수건 세탁','필라테스 수건 세탁','요양원 수건 세탁','병원 수건 세탁','피부과 수건 세탁','에스테틱 수건 세탁'].map(x=><a href="#" key={x}>{x}<span>→</span></a>)}</div><a className="all-link" href="#">업종별 수건세탁 전체 보기</a></section>
 
