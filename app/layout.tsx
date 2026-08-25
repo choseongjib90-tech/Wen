@@ -5,27 +5,28 @@ import './pricing-overrides.css';
 import './footer-overrides.css';
 import './hero-overrides.css';
 
-const ogImage='https://jolaundrylab.co.kr/assets/hero.webp?v=20260825-2';
+const ogImage='https://jolaundrylab.co.kr/assets/point1.webp?v=20260825-4';
+const socialDescription='미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.';
 
 export const metadata:Metadata={
   metadataBase:new URL('https://jolaundrylab.co.kr/'),
-  title:'조세탁연구소 | 용인 B2B 전문 세탁 · 수건 세탁',
-  description:'경기도 용인시 처인구 모현읍 외개일로 37에 위치한 조세탁연구소입니다. 미용실·헬스장·병원·에스테틱 등 사업장 세탁물을 정기 수거·세탁·배송합니다.',
+  title:'조세탁연구소 | B2B 전문 세탁',
+  description:socialDescription,
   alternates:{canonical:'https://jolaundrylab.co.kr/'},
   keywords:['조세탁연구소','용인 세탁업체','용인 수건 세탁','미용실 수건 세탁','헬스장 수건 세탁','병원 세탁','B2B 세탁','세탁 수거 배송'],
   openGraph:{
-    title:'조세탁연구소 | 용인 B2B 전문 세탁',
-    description:'미용실·헬스장·병원·에스테틱 등 사업장 세탁물을 정기 수거·세탁·배송합니다.',
+    title:'조세탁연구소 | B2B 전문 세탁',
+    description:socialDescription,
     url:'https://jolaundrylab.co.kr/',
     siteName:'조세탁연구소',
     locale:'ko_KR',
     type:'website',
-    images:[{url:ogImage,width:1200,height:630,alt:'조세탁연구소'}]
+    images:[{url:ogImage,width:1200,height:630,alt:'조세탁연구소 B2B 전문 세탁'}]
   },
   twitter:{
     card:'summary_large_image',
-    title:'조세탁연구소 | 용인 B2B 전문 세탁',
-    description:'미용실·헬스장·병원·에스테틱 등 사업장 세탁물을 정기 수거·세탁·배송합니다.',
+    title:'조세탁연구소 | B2B 전문 세탁',
+    description:socialDescription,
     images:[ogImage]
   }
 };
@@ -38,7 +39,7 @@ const localBusinessJsonLd={
   url:'https://jolaundrylab.co.kr/',
   telephone:'+82-10-3555-0517',
   taxID:'877-31-01664',
-  description:'미용실, 헬스장, 병원, 에스테틱 등 사업장 세탁물을 정기 수거·세탁·배송하는 B2B 전문 세탁 서비스입니다.',
+  description:socialDescription,
   address:{
     '@type':'PostalAddress',
     streetAddress:'모현읍 외개일로 37',
