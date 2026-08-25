@@ -11,7 +11,7 @@ export default function Contact(){
     e.preventDefault(); const form=e.currentTarget; const fd=new FormData(form);
     setStatus('sending');
     try{
-      const response=await fetch('https://formsubmit.co/ajax/whtod13@naver.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'[GK클린] 새로운 세탁 견적 문의',_template:'table',_honey:fd.get('website'),성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택',문의내용:fd.get('message')||'없음'})});
+      const response=await fetch('https://formsubmit.co/ajax/whtod13@naver.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'[조세탁연구소] 새로운 세탁 견적 문의',_template:'table',_honey:fd.get('website'),성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택',문의내용:fd.get('message')||'없음'})});
       if(!response.ok) throw new Error('send failed');
       setStatus('success'); setSelected([]);
       try{form.reset()}catch{}
