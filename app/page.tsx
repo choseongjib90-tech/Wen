@@ -1,7 +1,7 @@
 const problems = [
-  ['01', '샴푸 후 수건에서 약품 냄새가 올라옵니다', '손님이 눈을 감고 샴푸대에 누웠을 때 코끝에 닿는 냄새가 매장의 마지막 인상이 됩니다.'],
-  ['02', '세탁해도 염색약 자국이 남습니다', '염색약은 물에 그냥 녹지 않습니다. 온도와 세제가 맞지 않으면 색이 섬유에 고정돼 다시 빨아도 지워지지 않습니다.'],
-  ['03', '수건이 뻣뻣해져 금방 버리게 됩니다', '잔류 세제와 유분이 쌓이면 섬유가 딱딱해지고 물을 잘 먹지 않습니다. 교체 주기가 짧아져 수건 값이 계속 나갑니다.'],
+  ['01', '다른 사업장 세탁물과 섞이는 게 걱정됩니다', 'B2B 세탁은 물량이 많을수록 혼입 관리가 중요합니다. 조세탁연구소는 업체별 단독세탁과 단독건조를 기본으로 운영합니다.'],
+  ['02', '품목과 오염은 다른데 늘 같은 방식으로 세탁됩니다', '수건, 가운, 운동복, 의료복은 섬유와 오염 특성이 다릅니다. 온도·세제·시간을 품목과 오염에 맞춰 설계해야 세탁 품질이 안정됩니다.'],
+  ['03', '대량 세탁을 맡기면 품질 편차가 큽니다', '기계만 돌리는 세탁이 아니라 공정 관리와 마지막 검수가 필요합니다. 건조 후 수작업 검수까지 거쳐 납품 품질을 일정하게 관리합니다.'],
 ];
 const BASE=process.env.NEXT_PUBLIC_BASE_PATH??'';
 const cases = [
@@ -16,20 +16,20 @@ export default function Home() {
       <a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a>
     </header>
 
-    <section id="top" className="hero" style={{backgroundImage:`url('${BASE}/assets/hero.webp')`}}><div className="hero-shade"/><div className="hero-content"><p>TOWEL LAUNDRY</p><h1>미용실 수건 세탁</h1><span>샴푸 후 손님 목에 가장 먼저 닿는 수건입니다. 염색약·중화제·펌제를 빼내는 전용 공정으로 세탁합니다.</span></div></section>
+    <section id="top" className="hero" style={{backgroundImage:`url('${BASE}/assets/hero.webp')`}}><div className="hero-shade"/><div className="hero-content"><p>ENGINEERED B2B LAUNDRY</p><h1>공학박사가 직접 운영하는<br/>B2B 전문 세탁</h1><span>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.</span></div></section>
 
-    <section className="problems wrap"><h2>이런 문제를 겪고 계신가요</h2><div className="problem-grid">{problems.map(([n,t,d])=><article className="problem" key={n}><b>{n}</b><h3>{t}</h3><p>{d}</p></article>)}</div></section>
+    <section className="problems wrap"><h2>B2B 세탁, 이런 부분이 가장 중요합니다</h2><div className="problem-grid">{problems.map(([n,t,d])=><article className="problem" key={n}><b>{n}</b><h3>{t}</h3><p>{d}</p></article>)}</div></section>
 
     <section id="세탁공정" className="points">
-      <div className="point-row wrap"><img src={`${BASE}/assets/point1.webp`} alt="산업용 세탁기 안의 미용실 세탁물"/><div className="point-copy"><b>POINT 01</b><h2>미용 세탁물은 유화 공정을 거쳐야 빠집니다</h2><p>펌제·중화제·염색약은 유분과 함께 섬유에 달라붙습니다. 기름때를 물에 풀어내는 유화 공정을 거치지 않으면 표면만 씻기고 안쪽에 남습니다. 오일 성분이 남은 채 건조기 열을 받으면 발화 위험까지 생깁니다.</p></div></div>
-      <div className="point-row reverse wrap"><img src={`${BASE}/assets/point2.webp`} alt="세탁 완료 후 검수 전 수건"/><div className="point-copy"><b>POINT 02</b><h2>염색약 자국은 기계가 못 잡습니다</h2><p>조세탁연구소는 건조를 마친 수건을 한 장씩 펼쳐 자국과 이물질을 눈으로 확인한 뒤에야 접습니다. 자동 검수만으로는 미용실이 가장 예민해하는 이 부분을 걸러내지 못합니다.</p></div></div>
+      <div className="point-row wrap"><img src={`${BASE}/assets/point1.webp`} alt="산업용 세탁기 안의 사업장 세탁물"/><div className="point-copy"><b>POINT 01</b><h2>세탁도 공정 설계가 필요합니다</h2><p>같은 세탁기라도 어떤 온도와 세제, 시간, 헹굼 조건을 적용하느냐에 따라 결과가 달라집니다. 조세탁연구소는 공학박사가 직접 사업장별 품목과 오염 특성을 확인하고 세탁 공정을 설계합니다.</p></div></div>
+      <div className="point-row reverse wrap"><img src={`${BASE}/assets/point2.webp`} alt="세탁 완료 후 수작업 검수"/><div className="point-copy"><b>POINT 02</b><h2>대량일수록 분리와 검수가 품질을 좌우합니다</h2><p>조세탁연구소는 다른 사업장 세탁물과 섞지 않고 업체별로 세탁·건조합니다. 세탁이 끝난 뒤에는 얼룩, 이물질, 상태를 직접 확인해 납품 품질을 일정하게 관리합니다.</p></div></div>
     </section>
 
-    <section className="method"><div className="wrap"><h2>그래서 조세탁연구소는 이렇게 합니다</h2><div className="check-grid">
-      {['미용 세탁물 전용 유화 공정 — 약품과 유분기를 먼저 풀어냅니다','고온스팀 살균 세탁으로 냄새 유발균 차단','건조 후 한 장씩 펼쳐 염색약 자국·이물질 육안 검수','고객용 가운 · 대형 타월 · 스태프 유니폼도 함께'].map(x=><div key={x}><i>✓</i><span>{x}</span></div>)}
-      </div><p className="eyebrow">함께 맡기실 수 있는 품목</p><div className="chips">{['수건 · 타월','고객용 가운','대형 타월','스태프 유니폼'].map(x=><span key={x}>{x}</span>)}</div></div></section>
+    <section className="method"><div className="wrap"><h2>공학박사가 직접 설계하고 운영합니다</h2><div className="check-grid">
+      {['업체별 단독세탁 · 단독건조로 세탁물 혼입 최소화','품목과 오염 특성에 맞춘 세제 · 온도 · 시간 공정 설계','고온스팀 살균 세탁으로 위생 공정 강화','건조 후 수작업 검수로 얼룩 · 이물질 · 상태 확인'].map(x=><div key={x}><i>✓</i><span>{x}</span></div>)}
+      </div><p className="eyebrow">함께 맡기실 수 있는 품목</p><div className="chips">{['수건 · 타월','가운 · 유니폼','운동복 · 헬스복','환자복 · 의료복','단체복 · 행사 세탁'].map(x=><span key={x}>{x}</span>)}</div></div></section>
 
-    <section id="세탁사례" className="records"><div className="wrap"><h2>실제 작업 기록</h2><p>사진을 누르면 그 작업을 적어 둔 공식 블로그 글로 이동합니다.</p></div><div className="case-strip">{cases.map(([src,place,title])=><a className="case-card" href="#" key={src}><img src={src} alt={place+' 작업 사진'}/><div><b>{place}</b><span>{title}</span></div></a>)}</div><a className="outline-btn" href="#">미용실 · 뷰티 세탁 사례 보기　→</a></section>
+    <section id="세탁사례" className="records"><div className="wrap"><h2>실제 B2B 세탁 작업 기록</h2><p>조세탁연구소가 실제로 수거·세탁·검수·납품한 작업 기록입니다.</p></div><div className="case-strip">{cases.map(([src,place,title])=><a className="case-card" href="#" key={src}><img src={src} alt={place+' 작업 사진'}/><div><b>{place}</b><span>{title}</span></div></a>)}</div><a className="outline-btn" href="#">B2B 세탁 사례 보기　→</a></section>
 
     <section id="가격안내" className="pricing"><div className="pricing-wrap">
       <div className="pricing-grid">
@@ -40,11 +40,11 @@ export default function Home() {
       <div className="pricing-info"><b>ⓘ　표시된 금액은 시작 금액입니다.</b><span> 품목과 하루 발생량, 수거·배송 주기, 오염 정도에 따라 금액이 달라집니다. 연락 주시면 매장에 방문해 세탁물을 직접 보고 견적과 샘플링을 함께 도와드립니다.</span></div>
     </div></section>
 
-    <section id="업종별수건세탁" className="related wrap"><p>이런 세탁도 함께 하고 있습니다</p><div>{['헬스장 수건 세탁','필라테스 수건 세탁','요양원 수건 세탁','병원 수건 세탁','피부과 수건 세탁','에스테틱 수건 세탁'].map(x=><a href="#" key={x}>{x}<span>→</span></a>)}</div><a className="all-link" href="#">업종별 수건세탁 전체 보기</a></section>
+    <section id="업종별수건세탁" className="related wrap"><p>업종별로 필요한 세탁 공정이 다릅니다</p><div>{['미용실 수건 세탁','헬스장 수건 세탁','필라테스 수건 세탁','병원 · 의원 세탁','피부과 · 에스테틱 세탁','기업 · 단체 세탁'].map(x=><a href="#" key={x}>{x}<span>→</span></a>)}</div><a className="all-link" href="#">업종별 B2B 세탁 전체 보기</a></section>
 
-    <section id="contact" className="cta" style={{backgroundImage:`url('${BASE}/assets/hero.webp')`}}><div className="hero-shade"/><div><h2>미용실 수건 세탁, 한 번 맡겨보세요</h2><p>매장에 방문해 세탁물을 직접 보고 견적을 드립니다. 샘플링도 함께 도와드립니다.</p><a className="blue-btn" href="tel:01035550517">☎　010-3555-0517</a><a className="ghost-btn" href={`${BASE}/contact/`}>견적 문의하기</a></div></section>
+    <section id="contact" className="cta" style={{backgroundImage:`url('${BASE}/assets/hero.webp')`}}><div className="hero-shade"/><div><h2>사업장 세탁, 공정부터 다르게 맡겨보세요</h2><p>공학박사가 직접 세탁물을 확인하고 품목과 오염에 맞는 공정을 설계해 견적을 안내합니다.</p><a className="blue-btn" href="tel:01035550517">☎　010-3555-0517</a><a className="ghost-btn" href={`${BASE}/contact/`}>견적 문의하기</a></div></section>
 
-    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><span className="footer-logo-box" aria-hidden="true"></span><strong>조세탁연구소</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 병원 · 피부과 · 에스테틱 · 요양원 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 다른 사업장 세탁물과 섞지 않는 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p><a href="https://blog.naver.com/house_90" target="_blank" rel="noopener noreferrer">BLOG</a></div><div><small>바로가기</small>{['업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href={x==='견적 문의'?`${BASE}/contact/`:'#'} key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>010-3555-0517</h3><a className="footer-btn" href={`${BASE}/contact/`}>견적 문의하기</a><p>대표자: 조성집</p><p>경기도 용인시 처인구 모현읍 외개일로 37 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 조세탁연구소　|　대표자: 조성집　|　사업자등록번호: 877-31-01664</span><span>ⓒ 조세탁연구소. All rights reserved.</span></div></footer>
+    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><strong>조세탁연구소</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 공학박사가 직접 설계한 공정으로 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p><a href="https://blog.naver.com/house_90" target="_blank" rel="noopener noreferrer">BLOG</a></div><div><small>바로가기</small>{['업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href={x==='견적 문의'?`${BASE}/contact/`:'#'} key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>010-3555-0517</h3><a className="footer-btn" href={`${BASE}/contact/`}>견적 문의하기</a><p>대표자: 조성집</p><p>경기도 용인시 처인구 모현읍 외개일로 37 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 조세탁연구소　|　대표자: 조성집　|　사업자등록번호: 877-31-01664</span><span>ⓒ 조세탁연구소. All rights reserved.</span></div></footer>
 
     <div className="floating"><a href="https://bit.ly/4vHlBz0" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 카카오톡 문의" style={{order:-2,width:'156px',height:'44px',borderRadius:'999px',background:'#FEE500',color:'#191919',fontSize:'13px',fontWeight:700,display:'flex',gap:'8px',padding:'0 16px'}}><span aria-hidden="true">💬</span><span>카카오톡 문의하기</span></a><a href="https://blog.naver.com/house_90" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 네이버 블로그">N</a><a href="https://www.youtube.com/channel/UCeeyW2Jew63mU9BHacpsu4A" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 유튜브" style={{order:-1,width:'44px',height:'44px',borderRadius:'50%'}}><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></a><a href="tel:01035550517">☎　010-3555-0517</a></div>
   </main>
