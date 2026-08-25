@@ -18,7 +18,7 @@ export default function Contact(){
     }catch{setStatus('error')}
   }
   return <main>
-    <header className="site-header"><a className="logo" href={`${BASE}/`}><span className="logo-mark">GK</span><strong>조세탁연구소</strong></a><nav>{['홈','GK클린 소개','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?`${BASE}/`:x==='견적 문의'?`${BASE}/contact/`:`${BASE}/#`}>{x}</a>)}</nav><a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a></header>
+    <header className="site-header"><a className="logo" href={`${BASE}/`}><strong>조세탁연구소</strong></a><nav>{['홈','업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a key={x} href={x==='홈'?`${BASE}/`:x==='견적 문의'?`${BASE}/contact/`:`${BASE}/#`}>{x}</a>)}</nav><a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a></header>
     <section className="contact-hero"><p>CONTACT</p><h1>세탁 견적 문의</h1><span>업종과 지역, 하루 발생량을 알려주시면 담당자가 확인 후 연락드립니다.<br/>매장 방문 상담과 샘플링도 함께 도와드립니다.</span></section>
     <section className="contact-area wrap"><form className="contact-form" onSubmit={submit}><p className="form-kicker">INQUIRY</p><h2>세탁 견적 문의</h2><small>* 표시는 필수 입력 항목입니다</small><input className="website-field" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"/>
       <label>성함 *<input name="name" required placeholder="예: 홍길동"/></label><label>연락처 *<input name="phone" required placeholder="010-1234-5678"/></label><label>매장 지역 *<input name="area" required placeholder="예: 부천 중동 / 서울 강남구"/></label>
