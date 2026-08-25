@@ -43,10 +43,23 @@
   line-height:1.85;
 }
 
+.cta{
+  background-color:#0b1f41 !important;
+  background-image:url('https://images.pexels.com/photos/5816934/pexels-photo-5816934.jpeg?auto=compress&cs=tinysrgb&w=1920') !important;
+  background-position:center 52% !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+}
+
+.cta .hero-shade{
+  background:linear-gradient(135deg,rgba(12,48,105,.62),rgba(5,14,30,.68)) !important;
+}
+
 @media(max-width:760px){
   .hero{min-height:440px;background-position:center center !important;}
   .hero .hero-shade{background:rgba(7,20,42,.76) !important;}
   .hero .hero-content{width:calc(100% - 40px);margin:0 auto;padding:48px 0;text-align:center;}
   .hero .hero-content h1{font-size:36px;line-height:1.25;}
   .hero .hero-content span{font-size:14px;line-height:1.75;}
+  .cta{background-position:center center !important;}
 }
