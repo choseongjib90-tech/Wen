@@ -1,0 +1,19 @@
+.footer-logo-box{
+  display:none !important;
+}
+
+.footer-grid>div:first-child>b{
+  color:#fff !important;
+}
+
+.footer-grid>div:first-child>p{
+  font-size:0 !important;
+}
+
+.footer-grid>div:first-child>p::after{
+  content:'미용실 · 병원 · 피부과 · 에스테틱 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 다른 사업장 세탁물과 섞지 않는 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.';
+  display:block;
+  font-size:12px;
+  line-height:1.85;
+  color:#a8a8a8;
+}
