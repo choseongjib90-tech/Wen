@@ -4,6 +4,8 @@ import './floating-overrides.css';
 import './pricing-overrides.css';
 import './footer-overrides.css';
 
+const ogImage='https://jolaundrylab.co.kr/assets/hero.webp?v=20260825-2';
+
 export const metadata:Metadata={
   metadataBase:new URL('https://jolaundrylab.co.kr/'),
   title:'조세탁연구소 | 용인 B2B 전문 세탁 · 수건 세탁',
@@ -17,13 +19,13 @@ export const metadata:Metadata={
     siteName:'조세탁연구소',
     locale:'ko_KR',
     type:'website',
-    images:[{url:'https://jolaundrylab.co.kr/og.png',width:1200,height:630,alt:'조세탁연구소'}]
+    images:[{url:ogImage,width:1200,height:630,alt:'조세탁연구소'}]
   },
   twitter:{
     card:'summary_large_image',
     title:'조세탁연구소 | 용인 B2B 전문 세탁',
     description:'미용실·헬스장·병원·에스테틱 등 사업장 세탁물을 정기 수거·세탁·배송합니다.',
-    images:['https://jolaundrylab.co.kr/og.png']
+    images:[ogImage]
   }
 };
 
