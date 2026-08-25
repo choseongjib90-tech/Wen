@@ -3,6 +3,7 @@ import './globals.css';
 import './floating-overrides.css';
 import './pricing-overrides.css';
 import './footer-overrides.css';
+import './hero-overrides.css';
 
 const ogImage='https://jolaundrylab.co.kr/assets/hero.webp?v=20260825-2';
 
