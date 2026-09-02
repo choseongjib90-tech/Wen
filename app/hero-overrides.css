@@ -1,18 +1,31 @@
 .hero{
+  position:relative;
   min-height:560px;
   height:auto;
-  background-image:url('/assets/point1.webp') !important;
-  background-position:center center !important;
-  background-size:cover !important;
+  overflow:hidden;
+  background:none !important;
   place-items:center !important;
   text-align:center !important;
 }
 
+.hero-video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  z-index:0;
+}
+
 .hero .hero-shade{
-  background:linear-gradient(180deg,rgba(7,20,42,.70) 0%,rgba(11,31,65,.66) 52%,rgba(7,20,42,.72) 100%) !important;
+  z-index:1;
+  background:linear-gradient(180deg,rgba(7,20,42,.64) 0%,rgba(11,31,65,.58) 52%,rgba(7,20,42,.66) 100%) !important;
 }
 
 .hero .hero-content{
+  position:relative;
+  z-index:2;
   width:min(980px,calc(100% - 80px));
   margin:0 auto;
   padding:58px 0;
@@ -56,8 +69,9 @@
 }
 
 @media(max-width:760px){
-  .hero{min-height:440px;background-position:center center !important;}
-  .hero .hero-shade{background:rgba(7,20,42,.76) !important;}
+  .hero{min-height:440px;}
+  .hero-video{object-position:center center;}
+  .hero .hero-shade{background:rgba(7,20,42,.72) !important;}
   .hero .hero-content{width:calc(100% - 40px);margin:0 auto;padding:48px 0;text-align:center;}
   .hero .hero-content h1{font-size:36px;line-height:1.25;}
   .hero .hero-content span{font-size:14px;line-height:1.75;}
