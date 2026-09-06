@@ -1,4 +1,5 @@
 import HeroSlideshow from './HeroSlideshow';
+import CaseCarousel from './CaseCarousel';
 
 const problems = [
   ['01', '다른 사업장 세탁물과 섞이는 게 걱정됩니다', 'B2B 세탁은 물량이 많을수록 혼입 관리가 중요합니다. 조세탁연구소는 업체별 단독세탁과 단독건조를 기본으로 운영합니다.'],
@@ -31,7 +32,7 @@ export default function Home() {
       {['업체별 단독세탁 · 단독건조로 세탁물 혼입 최소화','품목과 오염 특성에 맞춘 세제 · 온도 · 시간 공정 설계','고온스팀 살균 세탁으로 위생 공정 강화','건조 후 수작업 검수로 얼룩 · 이물질 · 상태 확인'].map(x=><div key={x}><i>✓</i><span>{x}</span></div>)}
       </div><p className="eyebrow">함께 맡기실 수 있는 품목</p><div className="chips">{['수건 · 타월','가운 · 유니폼','운동복 · 헬스복','환자복 · 의료복','단체복 · 행사 세탁'].map(x=><span key={x}>{x}</span>)}</div></div></section>
 
-    <section id="세탁사례" className="records"><div className="wrap"><h2>실제 B2B 세탁 작업 기록</h2><p>조세탁연구소가 실제로 수거·세탁·검수·납품한 작업 기록입니다.</p></div><div className="case-strip">{cases.map(([src,place,title])=><a className="case-card" href="#" key={src}><img src={src} alt={place+' 작업 사진'}/><div><b>{place}</b><span>{title}</span></div></a>)}</div><a className="outline-btn" href="#">B2B 세탁 사례 보기　→</a></section>
+    <section id="세탁사례" className="records"><div className="wrap"><h2>실제 B2B 세탁 작업 기록</h2><p>조세탁연구소가 실제로 수거·세탁·검수·납품한 작업 기록입니다.</p></div><CaseCarousel cases={cases}/><a className="outline-btn" href="#">B2B 세탁 사례 보기　→</a></section>
 
     <section id="가격안내" className="pricing"><div className="pricing-wrap">
       <div className="pricing-grid">
