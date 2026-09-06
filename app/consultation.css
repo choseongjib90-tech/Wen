@@ -1,0 +1,24 @@
+.consultation{background:#fff;padding:96px 24px 104px;border-top:1px solid #edf0f5;color:#13233d;}
+.consultation-inner{width:min(1120px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:64px;}
+.consultation-eyebrow{margin:0 0 22px;color:#356bd0;font-size:14px;font-weight:700;letter-spacing:.03em;}
+.consultation-copy h2{margin:0;font-size:clamp(32px,3.5vw,48px);font-weight:800;line-height:1.26;letter-spacing:-.045em;}
+.consultation-copy h2 span{color:#2864d6;}
+.consultation-description{margin:24px 0;color:#5a6577;font-size:16px;line-height:1.9;word-break:keep-all;}
+.consultation-benefits{display:flex;flex-wrap:wrap;gap:12px 22px;list-style:none;padding:0;margin:0 0 32px;font-size:14px;font-weight:700;}
+.consultation-benefits li{display:flex;align-items:center;gap:7px;}
+.consultation-benefits li span{color:#2864d6;}
+.consultation-button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:58px;padding:16px 24px;border-radius:12px;background:#2864d6;color:white;font-size:16px;font-weight:700;box-shadow:0 8px 20px rgba(40,100,214,.16);transition:background .2s;}
+.consultation-button:hover{background:#1d50b2;}
+.consultation-button>span{font-size:22px;line-height:1;}
+.consultation-phone{display:flex;align-items:center;gap:10px;width:fit-content;min-height:44px;margin-top:10px;color:#667184;font-size:14px;}
+.consultation-phone strong{color:#24364e;font-weight:600;}
+.consultation-button:focus-visible,.consultation-phone:focus-visible{outline:3px solid #2864d6;outline-offset:5px;}
+.consultation-photo{position:relative;isolation:isolate;margin:0;overflow:hidden;border-radius:24px;background:#e9edf3;aspect-ratio:1.08;}
+.consultation-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:58% center;}
+.consultation-photo::after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(9,23,42,.85));pointer-events:none;}
+.consultation-photo figcaption{position:absolute;bottom:28px;left:28px;right:28px;z-index:1;color:white;}
+.consultation-photo figcaption span{display:block;font-size:14px;margin-bottom:8px;color:#eef3fc;}
+.consultation-photo figcaption strong{font-size:22px;line-height:1.4;letter-spacing:-.025em;}
+@media(max-width:900px){.consultation-inner{gap:32px;}}
+@media(max-width:760px){.consultation{padding:64px 20px 72px;}.consultation-inner{grid-template-columns:1fr;gap:32px;}.consultation-copy h2{font-size:clamp(30px,8vw,40px);}.consultation-eyebrow{margin-bottom:18px;}.consultation-description{margin:20px 0;}.consultation-benefits{gap:10px 16px;margin-bottom:26px;}.consultation-button{display:flex;width:100%;}.consultation-phone{margin:12px auto 0;}.consultation-photo{aspect-ratio:1.15;border-radius:18px;}.consultation-photo figcaption{bottom:22px;left:22px;right:22px;}.consultation-photo figcaption strong{font-size:20px;}}
+@media(prefers-reduced-motion:reduce){.consultation-button{transition:none;}}
