@@ -1,5 +1,6 @@
 import HeroSlideshow from './HeroSlideshow';
 import CaseCarousel from './CaseCarousel';
+import PricingSection from './PricingSection';
 
 const problems = [
   ['01', '다른 사업장 세탁물과 섞이는 게 걱정됩니다', 'B2B 세탁은 물량이 많을수록 혼입 관리가 중요합니다. 조세탁연구소는 업체별 단독세탁과 단독건조를 기본으로 운영합니다.'],
@@ -34,14 +35,7 @@ export default function Home() {
 
     <section id="세탁사례" className="records"><div className="wrap"><h2>실제 B2B 세탁 작업 기록</h2><p>조세탁연구소가 실제로 수거·세탁·검수·납품한 작업 기록입니다.</p></div><CaseCarousel cases={cases}/><a className="outline-btn" href="#">B2B 세탁 사례 보기　→</a></section>
 
-    <section id="가격안내" className="pricing"><div className="pricing-wrap">
-      <div className="pricing-grid">
-        <article className="price-card"><h3>정기 수거 · 소형</h3><p className="price-target">미용실 · 에스테틱 · PT샵 등 1인 매장부터</p><strong className="price-value">월 200,000원 ~</strong><p className="price-note">최소 금액이며, 물량과 품목에 따라 조정됩니다.</p><hr/><ul><li>업체별 단독세탁 · 단독건조</li><li>고온 스팀살균 세탁</li><li>1:1 수동 검수</li><li>칼각 폴딩 + 밴딩 포장</li><li>정기 수거 · 배송</li></ul><a className="price-button" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
-        <article className="price-card featured"><span className="popular">가장 많이 선택하십니다</span><h3>정기 수거 · 중형</h3><p className="price-target">헬스장 · 필라테스 · 피부과 · 의원 등 물량이 꾸준한 사업장</p><strong className="price-value">월 400,000원 ~</strong><p className="price-note">최소 금액이며, 물량과 품목에 따라 조정됩니다.</p><hr/><ul><li>소형 구성 전체 포함</li><li>품목별 분리 세탁 (수건 · 가운 · 운동복)</li><li>수거 · 배송 주기 협의</li><li>오염 종류별 맞춤 세제</li></ul><a className="price-button solid" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
-        <article className="price-card"><h3>대량 · 시설 전담</h3><p className="price-target">기업체 · 관공서 · 연수원 등 대량 세탁</p><strong className="price-value">상담 후 안내</strong><hr/><ul><li>중형 구성 전체 포함</li><li>침구류(이불 · 패드 · 베개커버) 포함</li><li>로고 방향까지 맞춘 수작업 폴딩</li><li>새벽 배송 등 시간대 협의</li><li>행사 · 연수 단발성 대량 세탁</li></ul><a className="price-button" href={`${BASE}/contact/`}>이 구성으로 견적 받기</a></article>
-      </div>
-      <div className="pricing-info" style={{display:'block'}}><div><b>ⓘ　표시된 금액은 시작 금액입니다.</b><span> 품목과 하루 발생량, 수거·배송 주기, 오염 정도에 따라 금액이 달라질 수 있습니다.</span></div><div style={{marginTop:'14px',paddingTop:'14px',borderTop:'1px solid rgba(54,121,245,.18)'}}><b style={{display:'block',marginBottom:'6px'}}>단독 세탁 품질보증제</b><span>타 매장 수건 혼입이 확인될 경우, <strong>해당 1회 배송 건에 대해 월 이용료의 10%를 차감해드립니다.</strong></span></div></div>
-    </div></section>
+    <PricingSection/>
 
     <section id="업종별수건세탁" className="related wrap"><p>업종별로 필요한 세탁 공정이 다릅니다</p><div>{['미용실 수건 세탁','헬스장 수건 세탁','필라테스 수건 세탁','병원 · 의원 세탁','피부과 · 에스테틱 세탁','기업 · 단체 세탁'].map(x=><a href="#" key={x}>{x}<span>→</span></a>)}</div><a className="all-link" href="#">업종별 B2B 세탁 전체 보기</a></section>
 

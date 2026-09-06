@@ -6,6 +6,7 @@ import './footer-overrides.css';
 import './hero-overrides.css';
 import './case-carousel.css';
 import './consultation.css';
+import './plans.css';
 
 const ogImage='https://jolaundrylab.co.kr/assets/point1.webp?v=20260825-5';
 const socialDescription='미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.';

@@ -1,5 +1,6 @@
 'use client';
-import {FormEvent, useState} from 'react';
+import {FormEvent, useState, useEffect} from 'react';
+import { laundryPlans } from '../laundry-plans';
 
 const items=['수건 · 타월','가운 · 유니폼','운동복 · 헬스복','환자복 · 의료복','이불 · 시트 · 침구류','단체복 · 행사 세탁','기타 · 상담 후 결정'];
 const priceTypes=['원하는 금액','기존에 하고 있는 금액','견적 금액'];
@@ -7,6 +8,11 @@ const usageCounts=['1회','2회','3회','4회','5회','6회'];
 const BASE=process.env.NEXT_PUBLIC_BASE_PATH??'';
 
 export default function Contact(){
+  const [plan,setPlan]=useState('');
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get('plan');
+    if (laundryPlans.some(item => item.id === requested)) setPlan(requested!);
+  }, []);
   const [selected,setSelected]=useState<string[]>([]);
   const [usageCount,setUsageCount]=useState('');
   const [priceType,setPriceType]=useState('');
@@ -15,7 +21,7 @@ export default function Contact(){
     e.preventDefault(); const form=e.currentTarget; const fd=new FormData(form);
     setStatus('sending');
     try{
-      const response=await fetch('https://formsubmit.co/ajax/whtod13@naver.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'[조세탁연구소] 새로운 세탁 견적 문의',_template:'table',_honey:fd.get('website'),성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택','이용 횟수':usageCount||'미선택','금액 기준':priceType||'미선택','원하는 금액':fd.get('desiredPrice')||'미입력','기존 이용 금액':fd.get('currentPrice')||'미입력',문의내용:fd.get('message')||'없음'})});
+      const response=await fetch('https://formsubmit.co/ajax/whtod13@naver.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'[조세탁연구소] 새로운 세탁 견적 문의',_template:'table',_honey:fd.get('website'),'관심 구성':laundryPlans.find(item=>item.id===plan)?.title||'상담 후 결정',성함:fd.get('name'),연락처:fd.get('phone'),'매장 지역':fd.get('area'),업종:fd.get('business')||'미선택','하루 발생량':fd.get('volume')||'미선택',세탁물:selected.join(', ')||'미선택','이용 횟수':usageCount||'미선택','금액 기준':priceType||'미선택','원하는 금액':fd.get('desiredPrice')||'미입력','기존 이용 금액':fd.get('currentPrice')||'미입력',문의내용:fd.get('message')||'없음'})});
       if(!response.ok) throw new Error('send failed');
       setStatus('success'); setSelected([]); setUsageCount(''); setPriceType('');
       try{form.reset()}catch{}
@@ -25,6 +31,7 @@ export default function Contact(){
     <header className="site-header"><a className="logo" href={`${BASE}/`}><strong>조세탁연구소</strong></a><nav>{['홈','업종별 수건세탁','세탁 공정','가격 안내','세탁 사례'].map(x=><a key={x} href={x==='홈'?`${BASE}/`:`${BASE}/#`}>{x}</a>)}</nav><a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a></header>
     <section className="contact-hero"><p>CONTACT</p><h1>세탁 견적 문의</h1><span>업종과 지역, 하루 발생량을 알려주시면 담당자가 확인 후 연락드립니다.<br/>매장 방문 상담과 샘플링도 함께 도와드립니다.</span></section>
     <section className="contact-area wrap"><form className="contact-form" onSubmit={submit}><p className="form-kicker">INQUIRY</p><h2>세탁 견적 문의</h2><small>* 표시는 필수 입력 항목입니다</small><input className="website-field" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"/>
+      <div className="plan-selection"><label>관심 있는 관리 구성<select name="plan" value={plan} onChange={e=>setPlan(e.target.value)}><option value="">상담 후 결정</option>{laundryPlans.map(item=><option key={item.id} value={item.id}>{item.title}</option>)}</select></label><p>세탁물 수량과 수거 횟수는 상담 후 안내합니다. 선택한 구성도 상담을 통해 조정할 수 있습니다.</p></div>
       <label>성함 *<input name="name" required placeholder="예: 홍길동"/></label><label>연락처 *<input name="phone" required placeholder="010-1234-5678"/></label><label>매장 지역 *<input name="area" required placeholder="예: 부천 중동 / 서울 강남구"/></label>
       <div className="select-grid"><label>업종 (선택)<select name="business" defaultValue=""><option value="" disabled>선택하세요</option><option>미용실 · 뷰티</option><option>병원 · 의료</option><option>헬스장 · 스포츠</option><option>기업 · 단체</option></select></label><label>하루 세탁물 발생량 (선택)<select name="volume" defaultValue=""><option value="" disabled>선택하세요</option><option>50장 미만</option><option>50~100장</option><option>100~300장</option><option>300장 이상</option></select></label></div>
       <fieldset><legend>어떤 세탁물을 맡기시나요? (복수 선택 가능)</legend><div className="item-buttons">{items.map(x=><button type="button" className={selected.includes(x)?'active':''} key={x} onClick={()=>setSelected(v=>v.includes(x)?v.filter(y=>y!==x):[...v,x])}>{x}</button>)}</div></fieldset>
