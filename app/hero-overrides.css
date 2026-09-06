@@ -8,15 +8,30 @@
   text-align:center !important;
 }
 
-.hero-video{
+.hero-slideshow{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
-  object-fit:cover;
-  object-position:center center;
   z-index:0;
+  background:#142137;
 }
+
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease-in-out;overflow:hidden;}
+.hero-slide.is-active{opacity:1;}
+.hero-photo-motion{position:absolute;inset:0;animation:hero-drift 7s ease-in-out both;animation-play-state:paused;}
+.hero-slide:not(.is-active) .hero-photo-motion{animation:none;transform:scale(1.045);}
+.hero-slide.is-active .hero-photo-motion{animation-play-state:running;}
+.hero-slideshow.is-paused .hero-photo-motion{animation-play-state:paused;}
+.hero-photo,.hero-photo-fill{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;object-position:var(--photo-position);}
+.hero-photo-fill{filter:blur(24px) brightness(.65);transform:scale(1.12);}
+.is-portrait .hero-photo{object-fit:contain;}
+.is-framed .hero-photo{transform:scale(1.26);}
+.hero-pause{position:absolute;bottom:20px;left:24px;z-index:3;display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 15px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(7,20,42,.55);color:#fff;font:inherit;font-size:14px;cursor:pointer;}
+.hero-pause:hover{background:rgba(7,20,42,.8);}
+.hero-pause:focus-visible{outline:3px solid #8fb7ff;outline-offset:4px;}
+@keyframes hero-drift{from{transform:scale(1.005) translateX(-.2%);}to{transform:scale(1.045) translateX(.2%);}}
+@media(prefers-reduced-motion:reduce){.hero-photo-motion{animation:none!important;transform:none!important;}.hero-slide{transition:none;}.hero-pause{display:none;}}
 
 .hero .hero-shade{
   z-index:1;
@@ -70,7 +85,8 @@
 
 @media(max-width:760px){
   .hero{min-height:440px;}
-  .hero-video{object-position:center center;}
+  .hero-pause{bottom:12px;left:16px;}
+  .is-framed .hero-photo{transform:scale(1.65);}
   .hero .hero-shade{background:rgba(7,20,42,.72) !important;}
   .hero .hero-content{width:calc(100% - 40px);margin:0 auto;padding:48px 0;text-align:center;}
   .hero .hero-content h1{font-size:36px;line-height:1.25;}

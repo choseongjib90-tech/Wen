@@ -1,3 +1,5 @@
+import HeroSlideshow from './HeroSlideshow';
+
 const problems = [
   ['01', '다른 사업장 세탁물과 섞이는 게 걱정됩니다', 'B2B 세탁은 물량이 많을수록 혼입 관리가 중요합니다. 조세탁연구소는 업체별 단독세탁과 단독건조를 기본으로 운영합니다.'],
   ['02', '품목과 오염은 다른데 늘 같은 방식으로 세탁됩니다', '수건, 가운, 운동복, 의료복은 섬유와 오염 특성이 다릅니다. 온도·세제·시간을 품목과 오염에 맞춰 설계해야 세탁 품질이 안정됩니다.'],
@@ -16,7 +18,7 @@ export default function Home() {
       <a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a>
     </header>
 
-    <section id="top" className="hero"><video className="hero-video" autoPlay muted loop playsInline preload="auto"><source src={`${BASE}/assets/hero-video.mp4`} type="video/mp4"/></video><div className="hero-shade"/><div className="hero-content"><p>ENGINEERED B2B LAUNDRY</p><h1>공학박사가 직접 운영하는<br/>B2B 전문 세탁</h1><span>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.</span></div></section>
+    <section id="top" className="hero"><HeroSlideshow/><div className="hero-shade"/><div className="hero-content"><p>ENGINEERED B2B LAUNDRY</p><h1>공학박사가 직접 운영하는<br/>B2B 전문 세탁</h1><span>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.</span></div></section>
 
     <section className="problems wrap"><h2>B2B 세탁, 이런 부분이 가장 중요합니다</h2><div className="problem-grid">{problems.map(([n,t,d])=><article className="problem" key={n}><b>{n}</b><h3>{t}</h3><p>{d}</p></article>)}</div></section>
 
