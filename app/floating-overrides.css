@@ -38,3 +38,17 @@
   align-items:center;
   justify-content:center;
 }
+
+.floating a[href^="tel:"]{
+  order:-3;
+  width:156px;
+  height:44px;
+  border-radius:999px;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:700;
+  white-space:nowrap;
+}
