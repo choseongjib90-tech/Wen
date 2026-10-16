@@ -40,7 +40,7 @@ const localBusinessJsonLd={
   '@id':'https://jolaundrylab.co.kr/#business',
   name:'조세탁연구소',
   url:'https://jolaundrylab.co.kr/',
-  telephone:'+82-10-3555-0517',
+  telephone:'1866-4001',
   taxID:'877-31-01664',
   description:socialDescription,
   address:{
@@ -57,7 +57,7 @@ const localBusinessJsonLd={
   ],
   contactPoint:{
     '@type':'ContactPoint',
-    telephone:'+82-10-3555-0517',
+    telephone:'1866-4001',
     contactType:'customer service',
     availableLanguage:['ko']
   }
