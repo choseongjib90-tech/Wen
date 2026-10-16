@@ -17,7 +17,7 @@ export default function Home() {
     <header className="site-header">
       <a className="logo" href="#top" aria-label="조세탁연구소 홈으로"><strong>조세탁연구소</strong></a>
       <nav aria-label="주요 메뉴">{['홈','업종별 수건세탁','세탁 공정','가격 안내','세탁 사례'].map(x=><a key={x} href={x==='홈'?'#top':'#'+x.replaceAll(' ','')}>{x}</a>)}</nav>
-      <a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:01035550517">☎ <strong>010-3555-0517</strong></a>
+      <a className="nav-cta" href={`${BASE}/contact/`}>견적 문의</a><a className="phone" href="tel:18664001">☎ <strong>1866-4001</strong></a>
     </header>
 
     <section id="top" className="hero"><HeroSlideshow/><div className="hero-shade"/><div className="hero-content"><p>ENGINEERED B2B LAUNDRY</p><h1>공학박사가 직접 운영하는<br/>B2B 전문 세탁</h1><span>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 세탁물을 업체별 단독세탁, 고온스팀 살균, 수작업 검수까지 공정으로 관리합니다.</span></div></section>
@@ -47,7 +47,7 @@ export default function Home() {
           <p className="consultation-description">수거부터 세탁·검수·배송까지.<br/>우리 매장에 맞는 세탁 조건을 직접 안내해드립니다.</p>
           <ul className="consultation-benefits"><li><span aria-hidden="true">✓</span> 업체별 단독세탁</li><li><span aria-hidden="true">✓</span> 공학박사 직접 운영</li></ul>
           <a className="consultation-button" href={`${BASE}/contact/`}>우리 매장 견적 알아보기 <span aria-hidden="true">↗</span></a>
-          <a className="consultation-phone" href="tel:01035550517">전화 상담 <strong>010-3555-0517</strong></a>
+          <a className="consultation-phone" href="tel:18664001">전화 상담 <strong>1866-4001</strong></a>
         </div>
         <figure className="consultation-photo">
           <img src={`${BASE}/assets/hero-slides/10-inspection.webp`} alt="조세탁연구소 작업자가 세탁된 수건을 한 장씩 펼쳐 검수하는 모습" width={1501} height={1072} loading="lazy" decoding="async"/>
@@ -56,8 +56,8 @@ export default function Home() {
       </div>
     </section>
 
-    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><strong>조세탁연구소</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 공학박사가 직접 설계한 공정으로 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p></div><div><small>바로가기</small>{['업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href={x==='견적 문의'?`${BASE}/contact/`:'#'} key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>010-3555-0517</h3><a className="footer-btn" href={`${BASE}/contact/`}>견적 문의하기</a><p>대표자: 조성집</p><p>경기도 용인시 처인구 모현읍 외개일로 37 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 조세탁연구소　|　대표자: 조성집　|　사업자등록번호: 877-31-01664</span><span>ⓒ 조세탁연구소. All rights reserved.</span></div></footer>
+    <footer><div className="footer-grid wrap"><div><div className="footer-logo"><strong>조세탁연구소</strong></div><b>BUSINESS LAUNDRY SERVICE</b><p>미용실 · 헬스장 · 병원 · 피부과 · 에스테틱 · 기업의 수건과 단체 세탁물을 수거해 세탁하고 배달해 드립니다. 공학박사가 직접 설계한 공정으로 업체별 단독세탁, 고온스팀 살균, 100% 수작업 검수를 지킵니다.</p></div><div><small>바로가기</small>{['업종별 수건세탁','품목 · 대량','세탁 공정','가격 안내','세탁 사례','견적 문의'].map(x=><a href={x==='견적 문의'?`${BASE}/contact/`:'#'} key={x}>{x}</a>)}</div><div><small>상담 · 견적</small><h3>1866-4001</h3><a className="footer-btn" href={`${BASE}/contact/`}>견적 문의하기</a><p>대표자: 조성집</p><p>경기도 용인시 처인구 모현읍 외개일로 37 (직영 세탁 공장)</p></div></div><div className="legal wrap"><span>상호 조세탁연구소　|　대표자: 조성집　|　사업자등록번호: 877-31-01664</span><span>ⓒ 조세탁연구소. All rights reserved.</span></div></footer>
 
-    <div className="floating"><a href="https://bit.ly/4vHlBz0" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 카카오톡 문의" style={{order:-2,width:'156px',height:'44px',borderRadius:'999px',background:'#FEE500',color:'#191919',fontSize:'13px',fontWeight:700,display:'flex',gap:'8px',padding:'0 16px'}}><span aria-hidden="true">💬</span><span>카카오톡 문의하기</span></a><a href="https://blog.naver.com/house_90" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 네이버 블로그"><span className="social-icon" aria-hidden="true">N</span><span>조세탁연구소</span></a><a href="https://www.youtube.com/channel/UCeeyW2Jew63mU9BHacpsu4A" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 유튜브" style={{order:-1}}><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg><span>조세탁연구소</span></a><a href="tel:01035550517">☎　010-3555-0517</a></div>
+    <div className="floating"><a href="https://bit.ly/4vHlBz0" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 카카오톡 문의" style={{order:-2,width:'156px',height:'44px',borderRadius:'999px',background:'#FEE500',color:'#191919',fontSize:'13px',fontWeight:700,display:'flex',gap:'8px',padding:'0 16px'}}><span aria-hidden="true">💬</span><span>카카오톡 문의하기</span></a><a href="https://blog.naver.com/house_90" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 네이버 블로그"><span className="social-icon" aria-hidden="true">N</span><span>조세탁연구소</span></a><a href="https://www.youtube.com/channel/UCeeyW2Jew63mU9BHacpsu4A" target="_blank" rel="noopener noreferrer" aria-label="조세탁연구소 유튜브" style={{order:-1}}><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg><span>조세탁연구소</span></a><a href="tel:18664001">☎　1866-4001</a></div>
   </main>
 }
